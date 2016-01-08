@@ -21,7 +21,7 @@
 						A prime number is a ny number that is evenly divisble only by the number one and itself. </br>					
 						</br>
 						</br>
-						<input id = "numb">
+						
 						<button type = "button" onclick = "myFunction()"> Input A Number To Check</button>
 						<p id = "demo"></p>
 						<script>
@@ -40,9 +40,12 @@
 										timesDivisible = 1;
 									}
 								}
-								if(timesDivisible === 1)
-								{
+								if(timesDivisible === 1){}
+								
 									document.getElementsById("demo").innerHTML = number + "is a prime number. ";
+								}
+								else{
+									document.getElementsById("demo").innerHTML = number + "is not a prime number. "
 								}
 							}
 						</script>
