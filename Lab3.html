@@ -1,4 +1,5 @@
 <!-- This is the lab work from day 3 -->
+<!DOCTYPE html>
 <html>
 	<head>
 		<title> Prime Confirmation </title>
@@ -24,28 +25,26 @@
 						
 						<button type = "button" onclick = "myFunction()"> Input A Number To Check</button>
 						<p id = "demo"></p>
+						
 						<script>
 							function myFunction() {
 								var number = prompt("Please provide a number to check.","1 ,3 , 37, etc.");
 								var timesDivisible = 0;
-								for(var i = 2; i < number; i++)
-								{
+								for(var i = 2; i < number; i++){
 								<!-- Use the triple equals so as not to force any unessecary conversions--> 
-									if(number % i === 0)
-									{
+									if(number % i === 0){
 										return false;
 									}
-									else
-									{
+									else{
 										timesDivisible = 1;
 									}
 								}
-								if(timesDivisible === 1){}
+								if(timesDivisible === 1){
 								
-									document.getElementsById("demo").innerHTML = number + "is a prime number. ";
+									document.getElementsById("demo") = number + "is a prime number. ";
 								}
 								else{
-									document.getElementsById("demo").innerHTML = number + "is not a prime number. ";
+									document.getElementsById("demo") = number + "is not a prime number. ";
 								}
 							}
 						</script>
