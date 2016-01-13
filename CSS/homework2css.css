@@ -1,0 +1,18 @@
+div
+   These styles are for aesthetics only.
+  font-size: 18px
+  line-height: 1.3em
+  vertical-align: top
+  margin-bottom: 1em
+  border-radius: 0.5em
+  padding: 1em
+
+  box-sizing: border-box
+  
+  width: 45%
+  
+
+.ib
+  background: salmon
+  border: solid red 1px
+  display: inline-block

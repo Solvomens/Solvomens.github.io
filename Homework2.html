@@ -1,0 +1,83 @@
+<html>
+	<head>
+		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<title>Homework 2: DOM Manipulation and Mortgages</title>
+	</head>
+	<body background-color: #98AFC7>
+		<h1> Calculate A Mortgage Schedule </h1>
+		<div class="container">
+			<form name=mortgageCalculator method=POST>
+				<p> Loan Amount <input type=text name=loan size=10></br></p>
+				<p> Duration of Loan in Year <input type=text name=years size=10></br></p>
+				<!--
+					<p> Duration of Loan 
+					<select id="yearSelector">
+						<option value=30> 30 Years</option>
+						<option value=20> 20 Years </option>
+						<option value=15> 15 Years </option>
+					</select> </br> </p>
+					-->
+				<p> Annual Interest Rate <input type=text name=interest size=10></br> </p>
+				<input type=button onClick="return myPayment()" value=Calculate>  
+				<input type=button onClick="return myPaymentReset()" value=Reset>
+				<p id=monthlyPayment></p>
+				<p id=totalPayment></p>
+				<p id=interestPaid></p>
+			</form>
+		</div>
+			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script>
+		function myPayment()
+		{
+			// Set variables from form data
+			var loanprincipal = document.mortgageCalculator.loan.value;
+			console.log(loanprincipal);
+			
+			<!--var months = yearSelector.option[yearSelector.selected].value * 12;console.log(months);-->
+			
+			var months = document.mortgageCalculator.years.value*12;
+			console.log(months);
+			
+			var interest = document.mortgageCalculator.interest.value / 1200;
+			console.log(interest);
+
+			// Calculate mortgage payment and display result
+			document.getElementById('monthlyPayment').innerHTML = 'Your monthly mortgage payment will be ' + '$'
+			+ (loanprincipal * interest / (1 - (Math.pow(1/(1 + interest), months)))).toFixed(2)+' for '+months+ 'months.';
+			console.log(monthlyPayment);
+			
+			document.getElementById('totalPayment').innerHTML = 'You will pay $' + (loanprincipal * interest / (1 - (Math.pow(1/(1 + interest), months)))).toFixed(2)*months + ' in total.'; 
+		
+			document.getElementById('interestPaid').innerHTML = 'You will have paid $' + (((loanprincipal * interest / (1 - (Math.pow(1/(1 + interest), months)))).toFixed(2)*months)-loanprincipal) + ' in interest.';
+		}	
+		</script>
+		<script>
+		function myPaymentReset(){
+		document.getElementById('monthlyPayment').innerHTML = 'Values reset';
+		document.mortgageCalculator.loan.value = null;
+		document.mortgageCalculator.years.value = null;
+		document.mortgageCalculator.interest.value = null;
+		}
+		</script>
+	</body>
+</html>
