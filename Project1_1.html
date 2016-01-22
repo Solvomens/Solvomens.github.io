@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+		integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" 
+		integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		<link rel="stylesheet" href="
+	</head>
+	<body background-color: azimuth>
+		<header>
+			<nav class="navbar navbar-default">
+			<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">Carthage Ultimate</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="http://skydmagazine.com/">Skyd Magazine <span class="sr-only">(current)</span></a></li>
+				<li class="active"><a href="http://www.usaultimate.org/index.html">USA Ultimate <span class="sr-only">(current)</span></a></li>
+				<li class="active"><a href="http://www.ultimaterob.com/">Ultimate Rob <span class="sr-only">(current)</span></a></li>
+				<li class="active"><a href="https://www.reddit.com/r/ultimate/">Reddit Ultimate <span class="sr-only">(current)</span></a></li>
+				
+				
+			</ul>
+			
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+		</nav>
+		
+		<div class="jumbotron" background-image("https://klichesh.files.wordpress.com/2010/05/ardbvgertbh.jpg")>
+			<div class="container">
+			</div>
+		</div>
+		</header>
+		
+		<div class = "container">
+			<div class = "row">
+				<div class = "col-sm-8">
+					<div class="well">
+						<div class="panel panel-default">
+						  <div class="panel-heading">
+							<h3 class="panel-title">Up Coming Events</h3>
+						  </div>
+						  <div class="panel-body">
+							Panel content
+						  </div>
+						</div
+					</div>
+				</div>
+				<div = "class-sm-8">
+					<div class="well">
+						<div class='example-chat-toolbar'>
+							
+							<label for="nameInput">Username:</label>
+							<input type='text' id='nameInput' placeholder='enter a username...'>
+						</div>
+						<div >
+							<ul id='example-messages' class="example-chat-messages" background-color: azimuth></ul>
+						</div>
+						<footer>
+							<input type='text' id='messageInput'  placeholder='Type a message...'>
+						</footer>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	
+	
+		<!-- CHAT JAVACRIPT -->
+		<script>
+			// CREATE A REFERENCE TO FIREBASE
+			var messagesRef = new Firebase('https://brilliant-inferno-498.firebaseio.com');
+
+			// REGISTER DOM ELEMENTS
+			var messageField = $('#messageInput');
+			var nameField = $('#nameInput');
+			var messageList = $('#example-messages');
+
+			// LISTEN FOR KEYPRESS EVENT
+			messageField.keypress(function (e) {
+				if (e.keyCode == 13) {
+				//FIELD VALUES
+				var username = nameField.val();
+				var message = messageField.val();
+
+				//SAVE DATA TO FIREBASE AND EMPTY FIELD
+				messagesRef.push({name:username, text:message});
+				messageField.val('');
+				}
+			});
+
+			// Add a callback that is triggered for each chat message.
+			messagesRef.limitToLast(10).on('child_added', function (snapshot) {
+					//GET DATA
+					var data = snapshot.val();
+					var username = data.name || "anonymous";
+					var message = data.text;
+
+					//CREATE ELEMENTS MESSAGE & SANITIZE TEXT
+					var messageElement = $("<li>");
+					var nameElement = $("<strong class='example-chat-username'></strong>")
+					nameElement.text(username);
+					messageElement.text(': ' +message).prepend(nameElement);
+		
+					//ADD MESSAGE
+					messageList.append(messageElement)
+
+					//SCROLL TO BOTTOM OF MESSAGE LIST
+					messageList[0].scrollTop = messageList[0].scrollHeight;
+			});
+		</script>
+	
+	
+	
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" 
+		integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" 
+		crossorigin="anonymous"></script>
+	</body>
+</html>
