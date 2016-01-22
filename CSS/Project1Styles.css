@@ -1,8 +1,10 @@
 .jumbotron {
-	position: relative;
-	background: #000 url("https://klichesh.files.wordpress.com/2010/05/ardbvgertbh.jpg") center center;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	overflow: hidden;
+	background-color:black
+}
+
+body {
+	background-color:black !important;
+}
+.h1 {
+	font color="red"
 }
