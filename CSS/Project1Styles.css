@@ -1,6 +1,7 @@
 .jumbotron {
 	
 	background-image: url (../Images/Ultimate-Frisbee-Evolution.jpg)
+	background-position: center;
 }
 
 body {
