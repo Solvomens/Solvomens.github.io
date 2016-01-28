@@ -18,6 +18,7 @@
 		<link rel="stylesheet" type="text/css" href="css/canvas_style.css">
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
 		<script type="text/javascript" src="js/sketch.js"></script>
+		<script src="bootbox.min.js"></script>
 		
 	</head>
 	<body id="mainBody" class ="body">
@@ -72,7 +73,7 @@
 						</div>
 						<footer>
 							<input type='text' id='messageInput'  placeholder='Type a message...'>
-							<button type="button" id='EnterButton' onclick="Submit()"> Submit </button>
+							<button type="button" id='EnterButton' > Submit </button>
 						</footer>
 					</div>
 				</div>			
@@ -94,7 +95,7 @@
 							</ul>
 						  </div>
 						  <div class = "panel-footer">
-							<button type = "button" onclick="alert('Not Currently Functional');" > Add Event</button>
+							<button type = "button" class="btn" onclick="alert('This feature is currently unavailable')"> Add Event</button>
 						  </div>
 					</div>
 				</div>
@@ -136,7 +137,13 @@
 		</div>
 	</div>
 		
-	
+	<script type = "text/javascript">
+		$(document).ready(function(){
+			$('.btn').on('click',function(){
+				bootbox.alert("This currently does not work");
+			}
+		}
+	</script>
 	
 		<script>
 

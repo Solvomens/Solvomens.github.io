@@ -1,3 +1,4 @@
+//From multiple drawing tutorials, script was downloaded and merged into project
 var __slice = Array.prototype.slice;
 (function($) {
   var Sketch;
