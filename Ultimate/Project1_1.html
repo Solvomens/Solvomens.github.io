@@ -22,7 +22,7 @@
 	</head>
 	<body id="mainBody" class ="body">
 		<header>
-			<nav class="navbar navbar-default">
+			<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -51,7 +51,7 @@
 		</div><!-- /.container-fluid -->
 		</nav>
 		
-		<div class="jumbotron" background-image("https://klichesh.files.wordpress.com/2010/05/ardbvgertbh.jpg")>
+		<div class="jumbotron">
 			<div class="container">
 				<h1>Carthage Ultimate </h1>
 			</div>
@@ -60,6 +60,22 @@
 		
 		<div class = "container">
 			<div class = "row row-list" >
+				<div = "class-sm-6">
+					<div class="well">
+						<div class='chat-toolbar'>
+							
+							<label for="nameInput">Username:</label>
+							<input type='text' id='nameInput' placeholder='enter a username...'>
+						</div>
+						<div >
+							<ul id='example-messages' class="example-chat-messages" ></ul>
+						</div>
+						<footer>
+							<input type='text' id='messageInput'  placeholder='Type a message...'>
+							<button type="button" id='EnterButton' onclick="Submit()"> Submit </button>
+						</footer>
+					</div>
+				</div>			
 				<div class = "col-sm-6">
 					<div class="well">
 						<div class="panel panel-default">
@@ -73,39 +89,21 @@
 								<li> 1/27/2016   6:00pm - 8:00pm   Practice in the TARC </li>
 								<li> 1/29/2016   NO PRACTICE </li>
 								<li> 1/22/2016   NO PRACITCE </li>
-								<li> 1/22/2016   NO PRACITCE </li>
+								<li> 2/3/2016   Practice will (hopefully) resume" </li>
 
 							</ul>
 						  </div>
 						  <div class = "panel-footer">
 							<button type = "button" onclick="alert('Not Currently Functional');" > Add Event</button>
 						  </div>
-						</div
-					</div>
-				</div>
-				
-				<div = "class-sm-6">
-					<div class="well">
-						<div class='chat-toolbar'>
-							
-							<label for="nameInput">Username:</label>
-							<input type='text' id='nameInput' placeholder='enter a username...'>
-						</div>
-						<div >
-							<ul id='example-messages' class="example-chat-messages" background-color: azimuth></ul>
-						</div>
-						<footer>
-							<input type='text' id='messageInput'  placeholder='Type a message...'>
-						</footer>
 					</div>
 				</div>
 			</div>
 		</div>
-		</div>
 		
-		<div class="panel panel-default" >
+	<div class="panel panel-default" >
 			<div class="panel-heading">
-				<h3 class="panel-title">Play Editor using Sketch.js</h3>
+				<h3 class="panel-title">Play Editor using Sketch.js (refresh page to clean canvas, erases removes background)</h3>
 			</div>
 			<div class="panel-body">
 						<div id="SketchTools">
@@ -116,19 +114,7 @@
 		<a href="#SketchPad" data-color="#0000ff" title="Blue"><img src="img/blue_icon.png" alt="Blue"/></a>
 		<a href="#SketchPad" data-color="#ffff00" title="Yellow"><img src="img/yellow_icon.png" alt="Yellow"/></a>
 		<a href="#SketchPad" data-color="#00ffff" title="Cyan"><img src="img/cyan_icon.png" alt="Cyan"/></a>
-		<!-- Advanced colors -->
-		<a href="#SketchPad" data-color="#e74c3c" title="Alizarin"><img src="img/alizarin_icon.png" alt="Alizarin"/></a>
-		<a href="#SketchPad" data-color="#c0392b" title="Pomegrante"><img src="img/pomegrante_icon.png" alt="Pomegrante"/></a>
-		<a href="#SketchPad" data-color="#2ecc71" title="Emerald"><img src="img/emerald_icon.png" alt="Emerald"/></a>
-		<a href="#SketchPad" data-color="#1abc9c" title="Torquoise"><img src="img/torquoise_icon.png" alt="Torquoise"/></a>
-		<a href="#SketchPad" data-color="#3498db" title="Peter River"><img src="img/peterriver_icon.png" alt="Peter River"/></a>
-		<a href="#SketchPad" data-color="#9b59b6" title="Amethyst"><img src="img/amethyst_icon.png" alt="Amethyst"/></a>
-		<a href="#SketchPad" data-color="#f1c40f" title="Sun Flower"><img src="img/sunflower_icon.png" alt="Sun Flower"/></a>
-		<a href="#SketchPad" data-color="#f39c12" title="Orange"><img src="img/orange_icon.png" alt="Orange"/></a>
-		<a href="#SketchPad" data-color="#ecf0f1" title="Clouds"><img src="img/clouds_icon.png" alt="Clouds"/></a>
-		<a href="#SketchPad" data-color="#bdc3c7" title="Silver"><img src="img/silver_icon.png" alt="Silver"/></a>
-		<a href="#SketchPad" data-color="#7f8c8d" title="Asbestos"><img src="img/asbestos_icon.png" alt="Asbestos"/></a>
-		<a href="#SketchPad" data-color="#34495e" title="Wet Asphalt"><img src="img/wetasphalt_icon.png" alt="Wet Asphalt"/></a>
+
 		<a href="#SketchPad" data-color="#ffffff" title="Eraser"><img src="img/eraser_icon.png" alt="Eraser"/></a>
 		<!-- Size options -->
 		<a href="#SketchPad" data-size="1"><img src="img/pencil_icon.png" alt="Pencil"/></a>
@@ -138,9 +124,9 @@
 		<a href="#SketchPad" data-size="15"><img src="img/mediumbrush_icon.png" alt="Medium brush"/></a>
 		<a href="#SketchPad" data-size="30"><img src="img/bigbrush_icon.png" alt="Big brush"/></a>
 		<a href="#SketchPad" data-size="60"><img src="img/bucket_icon.png" alt="Huge bucket"/></a>
-	</div>
+		</div>
 	
-	<canvas id="SketchPad" width="700" height="400"></canvas>
+		<canvas id="SketchPad" width="900" height="400"></canvas>
 
 			<script type="text/javascript">
 				$(function() {
@@ -149,6 +135,7 @@
 			</script>
 		</div>
 	</div>
+		
 	
 	
 		<script>
@@ -172,6 +159,15 @@
 				}
 			});
 
+			function Submit() {
+				var username = nameField.val();
+				var message = messageField.val();
+
+				//SAVE DATA TO FIREBASE AND EMPTY FIELD
+				messagesRef.push({name:username, text:message});
+				messageField.val('');
+			}
+			
 			// Add a callback that is triggered for each chat message.
 			messagesRef.limitToLast(100).on('child_added', function (snapshot) {
 					//GET DATA
