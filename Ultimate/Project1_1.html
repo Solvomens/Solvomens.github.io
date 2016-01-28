@@ -24,44 +24,43 @@
 	<body id="mainBody" class ="body">
 		<header>
 			<nav class="navbar navbar-inverse">
-			<div class="container-fluid">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="https://www.facebook.com/groups/246330382070418/">Carthage Ultimate</a>
-			</div>
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="http://skydmagazine.com/">Skyd Magazine <span class="sr-only">(current)</span></a></li>
-				<li class="active"><a href="http://www.usaultimate.org/index.html">USA Ultimate <span class="sr-only">(current)</span></a></li>
-				<li class="active"><a href="http://www.ultimaterob.com/">Ultimate Rob <span class="sr-only">(current)</span></a></li>
-				<li class="active"><a href="https://www.reddit.com/r/ultimate/">Reddit Ultimate <span class="sr-only">(current)</span></a></li>
-				
-				
-				
-			</ul>
+				<div class="container-fluid">
 			
-			</div><!-- /.navbar-collapse -->
-		</div><!-- /.container-fluid -->
-		</nav>
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					<a class="navbar-brand" href="https://www.facebook.com/groups/246330382070418/">Carthage Ultimate</a>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="http://skydmagazine.com/">Skyd Magazine <span class="sr-only">(current)</span></a></li>
+							<li class="active"><a href="http://www.usaultimate.org/index.html">USA Ultimate <span class="sr-only">(current)</span></a></li>
+							<li class="active"><a href="http://www.ultimaterob.com/">Ultimate Rob <span class="sr-only">(current)</span></a></li>
+							<li class="active"><a href="https://www.reddit.com/r/ultimate/">Reddit Ultimate <span class="sr-only">(current)</span></a></li>
+								
+						</ul>
+			
+					</div><!-- /.navbar-collapse -->
+				</div><!-- /.container-fluid -->
+			</nav>
 		
-		<div class="jumbotron">
-			<div class="container">
-				<h1>Carthage Ultimate </h1>
+			<div class="jumbotron">
+				<div class="container">
+					<h1>Carthage Ultimate </h1>
+				</div>
 			</div>
-		</div>
 		</header>
 		
 		<div class = "container">
 			<div class = "row row-list" >
-				<div = "class-sm-6">
+				<div = "class-sm-6" >
 					<div class="well">
 						<div class='chat-toolbar'>
 							
@@ -73,80 +72,89 @@
 						</div>
 						<footer>
 							<input type='text' id='messageInput'  placeholder='Type a message...'>
-							<button type="button" id='EnterButton' > Submit </button>
+							<button type="button" id='EnterButton' onclick="Submit()" > Submit </button>
 						</footer>
 					</div>
 				</div>			
 				<div class = "col-sm-6">
 					<div class="well">
 						<div class="panel panel-default">
-						  <div class="panel-heading">
-							<h3 class="panel-title">Up Coming Events</h3>
-						  </div>
-						  <div class="panel-body">
-							<ul>
-								<li> 1/22/2016   6:00pm - 8:00pm   Practice in the TARC </li>
-								<li> 1/25/2016   6:00pm - 8:00pm   Practice in the TARC </li>
-								<li> 1/27/2016   6:00pm - 8:00pm   Practice in the TARC </li>
-								<li> 1/29/2016   NO PRACTICE </li>
-								<li> 1/22/2016   NO PRACITCE </li>
-								<li> 2/3/2016   Practice will (hopefully) resume" </li>
+						
+							  <div class="panel-heading">
+								<h3 class="panel-title">Up Coming Events</h3>
+							  </div>
+						  
+							  <div class="panel-body">
+								<ul>
+									<li> 1/22/2016   6:00pm - 8:00pm   Practice in the TARC </li>
+									<li> 1/25/2016   6:00pm - 8:00pm   Practice in the TARC </li>
+									<li> 1/27/2016   6:00pm - 8:00pm   Practice in the TARC </li>
+									<li> 1/29/2016   NO PRACTICE </li>
+									<li> 1/22/2016   NO PRACITCE </li>
+									<li> 2/3/2016   Practice will (hopefully) resume" </li>
 
-							</ul>
-						  </div>
-						  <div class = "panel-footer">
-							<button type = "button" class="btn" onclick="alert('This feature is currently unavailable')"> Add Event</button>
-						  </div>
+								</ul>
+							  </div>
+						  
+							  <div class = "panel-footer">
+								<button type = "button" class="btn" onclick="alert('This feature is currently unavailable')"> Add Event</button>
+							  </div>
+						</div>
 					</div>
+				
+				
+				
+				
+			</div>
+		</div>
+		<div class="container">
+			<div class="panel panel-primary" >
+					<div class="panel-heading">
+						<h3 class="panel-title">Play Editor using Sketch.js (refresh page to clean canvas, erases removes background) by Michael Bleigh</h3>
+						</br>
+						<div id="SketchTools">
+								<!-- Basic tools -->
+								<a href="#SketchPad" data-color="#000000" title="Black"><img src="img/black_icon.png" alt="Black"/></a>
+								<a href="#SketchPad" data-color="#ff0000" title="Red"><img src="img/red_icon.png" alt="Red"/></a>
+								<a href="#SketchPad" data-color="#00ff00" title="Green"><img src="img/green_icon.png" alt="Green"/></a>
+								<a href="#SketchPad" data-color="#0000ff" title="Blue"><img src="img/blue_icon.png" alt="Blue"/></a>
+								<a href="#SketchPad" data-color="#ffff00" title="Yellow"><img src="img/yellow_icon.png" alt="Yellow"/></a>
+								<a href="#SketchPad" data-color="#00ffff" title="Cyan"><img src="img/cyan_icon.png" alt="Cyan"/></a>
+
+								<a href="#SketchPad" data-color="#ffffff" title="Eraser"><img src="img/eraser_icon.png" alt="Eraser"/></a>
+								<!-- Size options -->
+								<a href="#SketchPad" data-size="1"><img src="img/pencil_icon.png" alt="Pencil"/></a>
+								<a href="#SketchPad" data-size="3"><img src="img/pen_icon.png" alt="Pen"/></a>
+								<a href="#SketchPad" data-size="5"><img src="img/stick_icon.png" alt="Stick"/></a>
+								<a href="#SketchPad" data-size="9"><img src="img/smallbrush_icon.png" alt="Small brush"/></a>
+								<a href="#SketchPad" data-size="15"><img src="img/mediumbrush_icon.png" alt="Medium brush"/></a>
+								<a href="#SketchPad" data-size="30"><img src="img/bigbrush_icon.png" alt="Big brush"/></a>
+								<a href="#SketchPad" data-size="60"><img src="img/bucket_icon.png" alt="Huge bucket"/></a>
+							</div>
+					</div>
+					<div class="panel-body">
+							
+						<canvas id="SketchPad" width="900" height="400"></canvas>
+
+					<script type="text/javascript">
+						$(function() {
+							$('#SketchPad').sketch();
+						});
+					</script>
 				</div>
 			</div>
-		</div>
-		
-	<div class="panel panel-default" >
-			<div class="panel-heading">
-				<h3 class="panel-title">Play Editor using Sketch.js (refresh page to clean canvas, erases removes background) by Michael Bleigh</h3>
-			</div>
-			<div class="panel-body">
-						<div id="SketchTools">
-		<!-- Basic tools -->
-		<a href="#SketchPad" data-color="#000000" title="Black"><img src="img/black_icon.png" alt="Black"/></a>
-		<a href="#SketchPad" data-color="#ff0000" title="Red"><img src="img/red_icon.png" alt="Red"/></a>
-		<a href="#SketchPad" data-color="#00ff00" title="Green"><img src="img/green_icon.png" alt="Green"/></a>
-		<a href="#SketchPad" data-color="#0000ff" title="Blue"><img src="img/blue_icon.png" alt="Blue"/></a>
-		<a href="#SketchPad" data-color="#ffff00" title="Yellow"><img src="img/yellow_icon.png" alt="Yellow"/></a>
-		<a href="#SketchPad" data-color="#00ffff" title="Cyan"><img src="img/cyan_icon.png" alt="Cyan"/></a>
-
-		<a href="#SketchPad" data-color="#ffffff" title="Eraser"><img src="img/eraser_icon.png" alt="Eraser"/></a>
-		<!-- Size options -->
-		<a href="#SketchPad" data-size="1"><img src="img/pencil_icon.png" alt="Pencil"/></a>
-		<a href="#SketchPad" data-size="3"><img src="img/pen_icon.png" alt="Pen"/></a>
-		<a href="#SketchPad" data-size="5"><img src="img/stick_icon.png" alt="Stick"/></a>
-		<a href="#SketchPad" data-size="9"><img src="img/smallbrush_icon.png" alt="Small brush"/></a>
-		<a href="#SketchPad" data-size="15"><img src="img/mediumbrush_icon.png" alt="Medium brush"/></a>
-		<a href="#SketchPad" data-size="30"><img src="img/bigbrush_icon.png" alt="Big brush"/></a>
-		<a href="#SketchPad" data-size="60"><img src="img/bucket_icon.png" alt="Huge bucket"/></a>
-		</div>
-	
-		<canvas id="SketchPad" width="900" height="400"></canvas>
-
-			<script type="text/javascript">
-				$(function() {
-					$('#SketchPad').sketch();
-				});
-			</script>
-		</div>
-	</div>
-		
-	<script type = "text/javascript">
-		$(document).ready(function(){
-			$('.btn').on('click',function(){
-				bootbox.alert("This currently does not work");
+		</div>	
+			
+		<!--Attempted to implement bootbox which makes alerts and other such things more aesthetically pleasing-->
+		<script type = "text/javascript">
+			$(document).ready(function(){
+				$('.btn').on('click',function(){
+					bootbox.alert("This currently does not work");
+				}
 			}
-		}
-	</script>
-	
+		</script>
+			
 		<script>
-
 			var messagesRef = new Firebase('https://brilliant-inferno-498.firebaseio.com');
 
 
@@ -173,8 +181,8 @@
 				//SAVE DATA TO FIREBASE AND EMPTY FIELD
 				messagesRef.push({name:username, text:message});
 				messageField.val('');
-			}
-			
+				}
+					
 			// Add a callback that is triggered for each chat message.
 			messagesRef.limitToLast(100).on('child_added', function (snapshot) {
 					//GET DATA
@@ -182,22 +190,22 @@
 					var username = data.name || "anonymous";
 					var message = data.text;
 
-					
+							
 					var messageElement = $("<li>");
 					var nameElement = $("<strong class='example-chat-username'></strong>")
 					nameElement.text(username);
 					messageElement.text(': ' +message).prepend(nameElement);
-		
-			
+				
+					
 					messageList.append(messageElement)
 
-				
+						
 					messageList[0].scrollTop = messageList[0].scrollHeight;
 			});
 		</script>
-	
-	
-	
+			
+			
+			
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" 
 		integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" 
